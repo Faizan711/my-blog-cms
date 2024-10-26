@@ -6,6 +6,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { LogOut } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Navbar() {
   const { data: session } = useSession();
@@ -13,6 +14,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="w-full flex items-center justify-end p-3 gap-x-2">
+        <Link href="/admin">
+          <Button variant="outline">Admin CMS</Button>
+        </Link>
+
         <Button variant="ghost">
           <GitHubLogoIcon />
         </Button>
@@ -27,7 +32,7 @@ export function Navbar() {
               width={32}
               height={32}
             />
-            <Button variant="ghost" onClick={() => signOut()}>
+            <Button variant="destructive" onClick={() => signOut()}>
               Logout <LogOut />
             </Button>
           </>
