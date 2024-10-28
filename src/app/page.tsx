@@ -6,11 +6,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="relative flex-col min-h-[90vh] w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-20 py-10 md:shadow-xl">
-        <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
-          Articles by Faizan
-        </p>
-
+      <div className="relative flex-col min-h-[90vh] w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-10 md:px-20 py-10 md:shadow-xl">
+        <h1 className="z-10 whitespace-pre-wrap text-center text-3xl font-medium tracking-tighter text-black dark:text-white">
+          An Open Source Blog Website with Admin CMS
+        </h1>
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
