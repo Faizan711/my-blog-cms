@@ -1,11 +1,9 @@
-import { Navbar } from "@/components/navbar";
 import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="relative flex-col min-h-[90vh] w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-10 md:px-20 py-10 md:shadow-xl">
         <h1 className="z-10 whitespace-pre-wrap text-center text-3xl font-medium tracking-tighter text-black dark:text-white">
           An Open Source Blog Website with Admin CMS

@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { GeistMono } from "geist/font/mono";
 import Providers from "@/components/providers";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Faizan Writes",
@@ -24,6 +25,7 @@ export default function RootLayout({
             defaultTheme="system"
             disableTransitionOnChange
           >
+            <Navbar />
             {children}
           </ThemeProvider>
         </Providers>
