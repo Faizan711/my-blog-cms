@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import { GeistMono } from "geist/font/mono";
 import Providers from "@/components/providers";
 import { Navbar } from "@/components/navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Faizan Writes",
@@ -27,6 +28,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Analytics />
           </ThemeProvider>
         </Providers>
       </body>
