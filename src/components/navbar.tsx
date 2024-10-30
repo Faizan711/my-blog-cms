@@ -19,11 +19,9 @@ export function Navbar() {
         </Link>
 
         <div className="w-full flex items-center justify-end p-3 gap-x-2">
-          {session?.user?.role === "admin" && (
-            <Link href="/admin">
-              <Button variant="outline">Admin CMS</Button>
-            </Link>
-          )}
+          <Link href="/admin">
+            <Button variant="outline">Admin CMS</Button>
+          </Link>
           <Link href="https://github.com/Faizan711/my-blog-cms" target="_blank">
             <Button variant="ghost">
               <GitHubLogoIcon />
