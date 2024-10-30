@@ -22,6 +22,8 @@ model User {
   role          String?
   accounts      Account[]
   sessions      Session[]
+  blogs         Blog[] // Relation to blogs
+  comments      Comment[] // Relation to comments
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
@@ -63,4 +65,41 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+}
+
+model Blog {
+  id        String     @id @default(cuid())
+  title     String
+  content   String
+  excerpt   String?
+  status    BlogStatus @default(DRAFT)
+  likes     Int        @default(0)
+  authorId  String
+  author    User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  comments  Comment[] // Relation to comments
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Comment {
+  id        String        @id @default(cuid())
+  content   String
+  status    CommentStatus @default(PENDING)
+  blogId    String
+  authorId  String
+  blog      Blog          @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  author    User          @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+enum BlogStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum CommentStatus {
+  PENDING
+  APPROVED
+  REJECTED
 }
