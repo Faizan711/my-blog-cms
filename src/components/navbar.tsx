@@ -10,7 +10,6 @@ import Link from "next/link";
 
 export function Navbar() {
   const { data: session } = useSession();
-
   return (
     <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b-4">
       <div className="flex justify-between items-center pl-3">
@@ -19,7 +18,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full flex items-center justify-end p-3 gap-x-2">
-          <Link href="/admin">
+          <Link href="/admin" className="hidden md:block">
             <Button variant="outline">Admin CMS</Button>
           </Link>
           <Link href="https://github.com/Faizan711/my-blog-cms" target="_blank">
